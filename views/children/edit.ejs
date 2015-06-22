@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+<h1>Edit Your Child's Information</h1>
+
+<form action = "/children/<%=child.id%>?_method=put" method="POST">
+  <div class="form-group">
+    <label for="name"> First Name: </label>
+    <input type="text" name= "child[name]" class="form-control" id="name" value = "<%=child.name%>" autofocus>
+  </div>
+  <div class="form-group">
+    <label for="age"> Age: </label>
+    <input type="text" name= "child[age]" class="form-control" id="age" value = "<%=child.age%>" autofocus>
+  </div>
+  <div class="form-group">
+    <label for="needs"> Needs: </label>
+    <input type="text" name= "child[needs]" class="form-control" id="needs" value = "<%=child.needs%>" autofocus>
+  </div>
+  <div class="form-group">
+    <label for="interests"> Interests: </label>
+    <input type="text" name= "child[interests]" class="form-control" id="interests" value = "<%=child.interests%>" autofocus>
+  </div>
+  <div class="form-group">
+    <label for="site"> DropOff Site: </label>
+    <input type="text" name= "child[site]" class="form-control" id="site" value = "<%=child.site%>" autofocus>
+  </div>
+
+<input type="submit" value="Edit" class="btn btn-lg btn-success">
+<a href="/children" class="btn btn-lg btn-warning">Cancel</a>
+
+
+</form>
+
+
+<% include ../partials/footer %>
+<br>
+
+<form action="/logout">
+    <input type="submit" value="Logout" class="btn btn-primary btn-xs">
+</form>
