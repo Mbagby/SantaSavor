@@ -69,20 +69,30 @@ app.post("/login", function (req, res) {
 //6
 //index for children
 app.get("/children", routeMiddleware.ensureLoggedIn, function(req, res){
-	db.Child.find({}, function(err, children){
-		res.render("children/index.ejs", {children: children});
-	});
+  db.User.findById(req.session.id, function(err, user){
+    if(user.userType === "Parent"){
+    db.Child.find({}, function(err, children){
+    res.render("parentUser/index.ejs", {children: children});
+    });
+  } else{
+    db.Child.find({}, function(err, children){
+    res.render("santaUser/index.ejs", {children: children});
+  });
+  }
+  })
+  
 });
 
 //7
 //new
 //add if you are a parent add a child else you do not have access to this page
 app.get("/children/new", function(req,res){
-	res.render("children/new.ejs")
+	res.render("parentUser/new.ejs")
 });
 
 //8
 //post
+//only applies to the new route 
 app.post("/children", routeMiddleware.ensureLoggedIn, function(req,res){
 	var child = new db.Child(req.body.child);
 	child.contactId = req.session.id;
@@ -93,26 +103,40 @@ app.post("/children", routeMiddleware.ensureLoggedIn, function(req,res){
 
 //9
 //show
+//Dependent of userType
 app.get("/children/:id", routeMiddleware.ensureLoggedIn, function(req, res){
-	db.Child.findById(req.params.id, function(err, foundChild){
-		if(err){
-			res.render("errors/404.ejs");
-		} else {
-			res.render("children/show.ejs", {child: foundChild});
-		}
-	})
+  db.User.findById(req.session.id, function(err, user){
+    if(err){
+      res.render("errors/404/ejs");
+    } else if(user.userType === "Parent"){
+      db.Child.findById(req.params.id, function(err, foundChild){
+      res.render("parentUser/show.ejs", {child: foundChild});
+      });
+    } else{
+      db.Child.findById(req.params.id, function(err, foundChild){
+      res.render("santaUser/show.ejs", {child: foundChild});
+      });
+    }
+  })
 });
+
 
 //10
 //edit (only if it is your child)
 app.get("/children/:id/edit", routeMiddleware.ensureLoggedIn, routeMiddleware.ensureCorrectUser, function(req, res){
-	db.Child.findById(req.params.id, function(err, foundChild){
-		if(err){
-			res.render("errors/404.ejs");
+	db.User.findById(req.session.id, function(err, user){
+    if(err){
+      res.render("errors/404.ejs");
+    } else if(user.userType === "Parent"){
+        db.Child.findById(req.params.id, function(err, foundChild){
+        res.render("parentUser/edit.ejs", {child: foundChild});
+        });
 		} else {
-			res.render("children/edit.ejs", {child: foundChild});
-		}
-	})
+        db.Child.findById(req.params.id, function(err, foundChild){
+        res.render("santaUser/edit.ejs", {child: foundChild});
+		    });
+    }
+});
 });
 
 //11
@@ -148,7 +172,7 @@ app.get("/logout", function (req, res) {
 
 //error if any case
 app.get('*', function(req,res){
-  res.render('404');
+  res.render('errors/404.ejs');
 });
 
 //start server

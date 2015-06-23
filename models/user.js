@@ -3,7 +3,7 @@ var SALT_WORK_FACTOR = 10;
 var mongoose = require("mongoose");
 
 var userSchema = new mongoose.Schema({
-    type: String,
+    userType: String,
     email: {
       type: String,
       lowercase: true,
@@ -12,7 +12,7 @@ var userSchema = new mongoose.Schema({
     password: {
       type: String,
       required: true
-    },
+    }
   });
 
 userSchema.pre('save', function(next) {

@@ -1,6 +1,5 @@
 <% include ../partials/header %>
 <h1>Santa Savors</h1>
-<a href = "/children/new">Add a Child</a>
 <table class= "table table-striped table-hover">
 <thead>
 	<tr>
@@ -22,7 +21,7 @@
   	<td><%= child.interests %></td>
   	<td><%= child.site %></td>
   	<td><%= child.santa %></td>
-    <td><a href="/children/<%= child.id%>/edit">Choose Me!</a></td>
+    <td><a href="/children/<%= child.id%>/">Choose Me!</a></td>
   </tr>
 
 <% })%>
