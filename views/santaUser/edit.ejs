@@ -19,22 +19,16 @@
     <td><%= child.needs %></td>
     <td><%= child.interests %></td>
     <td><%= child.site %></td>
-    <td><input type="text" name= "child[santa]" class="form-control" id="santaInput" autofocus></td>
     <form action = "/children/<%=child.id%>?_method=put" method="POST">
+    <td><input type="text" name= "child[santa]" value= "<%= child.santa%>" class="form-control" id="santaInput" autofocus></td>
     <td><button id= "chooseButton" class= "btn-primary btn- xs"> Choose Me! </button></td>
-    </form>
   </tr>
-
-
 </tbody>
 </table>
 
-
-
-
-
 <input type="submit" value="Submit" class="btn btn-lg btn-success">
 <a href="/children" class="btn btn-lg btn-warning">Cancel</a>
+</form>
 
 
 
