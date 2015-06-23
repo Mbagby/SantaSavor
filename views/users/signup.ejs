@@ -1,10 +1,18 @@
 <% include ../partials/header %>
+<script type="text/javascript" src="/js/children.js"></script>
 <h1>Sign up</h1>
+<button id= "parentButton" class= "btn-primary btn- xs"> Parent </button>
+<button id= "santaButton" class= "btn-primary btn- xs"> Santa </button>
+<p>Are you a Parent or a Santa:  </p>
 <form method="POST" action="/signup" >
+  <div class="form-group">
+    <label for="userType"></label>
+      <br>
+      <input id= "userType" type="text" id="email" name="user[email]" class="form-control" autofocus>
+  </div>
   <div class="form-group">
     <label for="user">Email:    </label>
       <input type="text" id="email" name="user[email]" class="form-control" autofocus>
-
   </div>
   <div class="form-group">
     <label> Password: </label>
