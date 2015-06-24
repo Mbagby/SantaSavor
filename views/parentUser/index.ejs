@@ -16,7 +16,7 @@
 <tbody>
 <% children.forEach(function(child){ %>
   <tr>
-    <td><a href="/children/<%= child.id%>/"><%= child.name%></a></td>
+    <td><a href="/children/<%= child.id%>/" class= "btn btn-primary-xs"><%= child.name%></a></td>
   	<td><%= child.age %></td>
   	<td><%= child.needs %></td>
   	<td><%= child.interests %></td>
