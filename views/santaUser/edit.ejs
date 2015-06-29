@@ -1,5 +1,12 @@
 <% include ../partials/header %>
-<h1>Sign up to be <%= child.name%>'s Santa</h1>
+
+<div class= "jumbotron">
+  <h1>Volunteer to be</h1>
+  <h1 id= "shiftLeft"><%= child.name%>'s Santa</h1>
+  <div class= "link">
+    <a href = "/children">See All Children</a>
+  </div>
+</div>
 
 <table class= "table table-striped table-hover">
 <thead>
@@ -20,7 +27,7 @@
     <td><%= child.interests %></td>
     <td><%= child.site %></td>
     <form action = "/children/<%=child.id%>?_method=put" method="POST">
-    <td><input id="santaInput" type="text" name= "child[santa]" value= "<%=child.santa%>" class="form-control" autofocus></td>
+    <td><input id="santaInput" type="text" name= "child[santa]" value= "<%=child.santa%>" placeholder= "Add Your Username/Email" class="form-control" autofocus></td>
   </tr>
 </tbody>
 </table>
@@ -28,7 +35,7 @@
 <input type="submit" value="Submit" class="btn btn-lg btn-success">
 <a href="/children" class="btn btn-lg btn-warning">Cancel</a>
 </form>
-<td><button id= "assignButton" class= "btn btn-primary btn-lg"> Choose Me! </button></td>
+
 
 
 

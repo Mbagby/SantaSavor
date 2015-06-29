@@ -136,7 +136,7 @@ app.get("/children/:id/edit", routeMiddleware.ensureLoggedIn, routeMiddleware.en
         res.render("santaUser/edit.ejs", {child: foundChild});
 		    });
     }
-});
+  });
 });
 
 //11

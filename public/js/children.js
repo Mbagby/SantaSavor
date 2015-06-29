@@ -20,10 +20,6 @@ $(document).ready(function(){
 	$("#santaButton").on("click", function(){
 		$("#userType").val("Santa")
 	});
-	//For Santa User Edit Page to change input value
-	$("#assignButton").on("click", function(){
-		$("#santaInput").val("Enter Your UserName")
-	});
 
 
 

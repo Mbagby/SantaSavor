@@ -1,0 +1,52 @@
+body{
+	background-color: #FFFFF0;
+}
+.jumbotron{
+	margin-top: 10px;
+	font-color: white;
+	border-radius: 5%;
+	background-image: url("/images/ChristmasBowsBanner.jpg");
+	background-size: 100%;
+}
+.jumbotron h1{
+	text-transform: uppercase;
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	color: white;
+	font-size: 35px;
+}
+.jumbotron a{
+	color: white;
+	float: right;
+	font-size: 25px;
+	margin-top: 15px;
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+}
+table {
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	border: 5px solid #2F4F4F;
+}
+table th{
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+table td {
+	font-size: 16px;
+}
+#shiftLeft{
+	margin-left: 70px;
+}
+#shiftSide p{
+	color: white;
+	font-size: 20px;
+	margin-left: 54%;
+	padding-right:10%;
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+}
+#shiftSide h1{
+	font-size: 25px;
+	text-transform: uppercase;
+	padding-left: 1%;
+	padding-right: 69%;
+	color: white;
+	font-weight: lighter;
+}

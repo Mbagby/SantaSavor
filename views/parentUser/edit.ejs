@@ -1,5 +1,11 @@
 <% include ../partials/header %>
-<h1>Edit Your Child's Information</h1>
+
+<div class= "jumbotron">
+  <h1>Edit Your Child's Information</h1>
+  <div class= "link">
+    <a href = "/children">See All Children</a>
+  </div>
+</div>
 
 <form action = "/children/<%=child.id%>?_method=put" method="POST">
   <div class="form-group">

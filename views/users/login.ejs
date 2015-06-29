@@ -1,7 +1,16 @@
 <% include ../partials/header %>
 
+<div class= "jumbotron">
+  <h1>Welcome To Santa's Savors</h1>
+  <div class= "link">
+    <a href="/signup">Don't have an account? Sign up here</a>
+  </div>
+</div>
 
-<h1>Login</h1>
+<div id="login">
+	<h1>Login</h1>
+</div>
+
 <form method="POST" action="/login" >
   <div class="form-group">
     <label for="email"> Email:     </label>
@@ -13,5 +22,5 @@
   </div>
   <input type="submit" value="Login" class="btn btn-primary">
 </form>
-<a href="/signup">Don't have an account? Sign up here</a>
+
 <% include ../partials/footer %>
