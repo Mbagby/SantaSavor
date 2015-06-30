@@ -20,6 +20,8 @@ $(document).ready(function(){
 	$("#santaButton").on("click", function(){
 		$("#userType").val("Santa")
 	});
+	//for data Table
+	$("#searchDataTable").DataTable();
 
 
 

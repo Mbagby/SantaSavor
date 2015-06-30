@@ -25,7 +25,7 @@ app.use(loginMiddleware);
 
 //1
 app.get("/", routeMiddleware.ensureLoggedIn, function(req,res){
-  res.render('users/index.ejs');
+  res.render('users/login.ejs');
 });
 
 //2

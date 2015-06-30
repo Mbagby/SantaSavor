@@ -27,8 +27,8 @@
     <td><%= child.interests %></td>
     <td><%= child.site %></td>
     <td><%= child.santa %></td>
-    <td class = "edit"><a href="/children/<%= child.id%>/edit" class="btn btn-danger btn-xs">Edit</a></td>
-    <td class= "delete"><form action="/children/<%= child.id %>?_method=delete" method= "POST"><input type="submit" value="Delete" class="btn btn-danger btn-xs"></form></td>
+    <td class = "edit"><a href="/children/<%= child.id%>/edit" class="btn btn-red btn-xs">Edit</a></td>
+    <td class= "delete"><form action="/children/<%= child.id %>?_method=delete" method= "POST"><input type="submit" value="Delete" class="btn btn-red btn-xs"></form></td>
   </tr>
 </table>
 
@@ -36,5 +36,5 @@
 <br>
 
 <form action="/logout">
-    <input type="submit" value="Logout" class="btn btn-primary btn-xs">
+    <input type="submit" value="Logout" class="btn btn-gold btn-m">
 </form>

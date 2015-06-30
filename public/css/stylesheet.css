@@ -1,9 +1,24 @@
+#left, #right {
+	background-color: #800020;
+	background: #800060 -webkit-gradient(linear, left top, left bottom, from(#80000B), to(#FFFAF0)) no-repeat;
+	position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 4%;
+		}
+		#left { 
+			left: 0; 
+		}
+		#right { 
+			right: 0; 
+		}
 body{
-	background-color: #FFFFF0;
+	background-color: #F5FFFA;
 }
 .jumbotron{
 	margin-top: 10px;
-	font-color: white;
+	color: #F5FFFA;
 	border-radius: 5%;
 	background-image: url("/images/ChristmasBowsBanner.jpg");
 	background-size: 100%;
@@ -11,11 +26,11 @@ body{
 .jumbotron h1{
 	text-transform: uppercase;
 	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-	color: white;
+	color: #F5FFFA;
 	font-size: 35px;
 }
 .jumbotron a{
-	color: white;
+	color: #F5FFFA;
 	float: right;
 	font-size: 25px;
 	margin-top: 15px;
@@ -23,10 +38,13 @@ body{
 }
 table {
 	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-	border: 5px solid #2F4F4F;
+	color: #006600;
+	border: 5px solid #006600;
 }
 table th{
 	text-transform: uppercase;
+}
+table thead{
 	text-decoration: underline;
 }
 table td {
@@ -36,7 +54,7 @@ table td {
 	margin-left: 70px;
 }
 #shiftSide p{
-	color: white;
+	color: #F5FFFA;
 	font-size: 20px;
 	margin-left: 54%;
 	padding-right:10%;
@@ -47,6 +65,26 @@ table td {
 	text-transform: uppercase;
 	padding-left: 1%;
 	padding-right: 69%;
-	color: white;
+	color: #F5FFFA;
 	font-weight: lighter;
+}
+.btn-gold{
+	background-color: #DEAE36;
+	color: white;
+	border-color: #999999;
+}
+.btn-red{
+	background-color: #800020;
+	color: white;
+}
+.btn-green{
+	background-color: #008060;
+	color: white;
+}
+.btn-dark{
+	color: #006600;
+	font-weight: bold;
+}
+#shiftDown{
+	margin-top: 15px;
 }
