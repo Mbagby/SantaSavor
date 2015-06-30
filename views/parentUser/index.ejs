@@ -16,7 +16,9 @@
 		<th>Age</th>
 		<th>Needs</th>
 		<th>Interests</th>
-		<th>Site</th>
+    <th>Clothing Size</th>
+    <th>Shoe Size</th>
+    <th>Site</th>
 		<th>Santa</th>
 	</tr>
 </tfoot>
@@ -26,6 +28,8 @@
     <th>Age</th>
     <th>Needs</th>
     <th>Interests</th>
+    <th>Size</th>
+    <th>Shoe Size</th>
     <th>Site</th>
     <th>Santa</th>
   </tr>
@@ -37,6 +41,8 @@
   	<td><%= child.age %></td>
   	<td><%= child.needs %></td>
   	<td><%= child.interests %></td>
+    <td><%= child.clothing %></td>
+    <td><%= child.shoe %></td>
   	<td><%= child.site %></td>
   	<td><%= child.santa %></td>
   </tr>
@@ -45,6 +51,10 @@
 
 </tbody>
 </table>
+<p>Find Your Nearest Site Location Below</p>
+<br>
+
+<div id = "map-canvas"></div>
 <% include ../partials/footer %>
 <br>
 <form action="/logout">

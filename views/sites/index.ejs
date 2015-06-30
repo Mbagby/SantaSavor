@@ -1,0 +1,15 @@
+<% include ../partials/header %>
+<h1>See all the sites!</h1>
+
+<a href="/sites/new">Add a new site</a>
+
+<% sites.forEach(function(site){ %>
+  <p>
+    <a href="https://www.google.com/maps/@<%=site.lat%>,<%=site.long%>,12z"><%= site.address%></a>
+  </p>
+<% })%>
+
+<div id="map-canvas">
+</div>
+
+<% include ../partials/footer %>

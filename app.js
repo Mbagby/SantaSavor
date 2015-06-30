@@ -3,6 +3,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     db = require("./models"),
     methodOverride = require("method-override"),
+    favicon = require('serve-favicon'),
     session = require("cookie-session"),
     morgan = require("morgan"),
     loginMiddleware = require("./middleware/loginHelper");
@@ -13,6 +14,7 @@ app.use(methodOverride('_method'));
 app.use(morgan('tiny'));
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 
 app.use(session({
@@ -162,6 +164,43 @@ app.delete('/children/:id', routeMiddleware.ensureLoggedIn, routeMiddleware.ensu
     }
   })
 });
+
+//site routes
+
+app.get("/sites", routeMiddleware.ensureLoggedIn, function(req, res){
+    db.Site.find({}, function(err, sites){
+      res.format({
+        "text/html": function(){
+          res.render("sites/index.ejs", {sites: sites});
+        },
+        "application/json": function(){
+          res.send({
+            sites: sites
+          });
+        },
+        "default": function(){
+          res.status(406).send("Not Acceptable");//What 406 is --> not acceptable
+          res.render("errors/404.ejs");
+        }
+      })
+    });
+});
+
+app.get("/sites/new", function(req,res){
+  res.render("sites/new.ejs")
+});
+
+app.post("/sites", routeMiddleware.ensureLoggedIn, function(req,res){
+  var site = new db.Site(req.body.site);
+  site.save(function(err,site){
+    if(err){
+      res.render("errors/404.ejs");
+    }else {
+    res.redirect("/sites")
+  };
+  })
+});
+
 
 //13
 //logout

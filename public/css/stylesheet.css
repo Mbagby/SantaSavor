@@ -88,3 +88,6 @@ table td {
 #shiftDown{
 	margin-top: 15px;
 }
+#map-canvas {
+	height: 500px;
+}
